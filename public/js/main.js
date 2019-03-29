@@ -1,7 +1,7 @@
 $(document).ready(function () {
   //Start of Document Ready function
 
-  var modals = document.querySelectorAll('.modal');
+  var modals = $(".modal");
   M.Modal.init(modals);
 
   //Parallax initialization
@@ -21,7 +21,7 @@ $(document).ready(function () {
   });
 
   //On submiting user signup info
-  $("#signUp").on("click", function (event) {
+  $("#signUp").on("click", function(event) {
     event.preventDefault();
     //1. get user input
     var userName = $("#username")
@@ -46,7 +46,7 @@ $(document).ready(function () {
           password: password,
           email: email
         }
-      }).then(function (data) {
+      }).then(function(data) {
         window.location = "/dashboard" + "/" + data.id;
       });
     } else {

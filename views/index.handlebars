@@ -89,58 +89,49 @@
 <!--Start first section -->
 <div class="section white content-container" id="signup">
     <div class="row">
-        <div class="col s6 card-wrap">
+        <div class="col s10 card-wrap offset-s1">
             <div class="card">
-                <h1>Create an account</h1>
-                <div class="divider"></div>
-                <form id="signup_form">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input placeholder="" id="username" type="text" class="validate">
-                            <label for="username">User Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">lock_outline</i>
-                            <input placeholder="" id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input placeholder="" id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-center col s12">
-                            <div class="g-recaptcha" data-sitekey="site key goes here"></div>
-                        </div>
-                    </div>
-                </form>
                 <div class="card-action">
-                    <a class="btn" id="signUp">Sign Up</a>
+                    <a class="btn modal-trigger" id="sign-up" data-target="modal-signup">Sign Up!</a>
                 </div>
-            </div>
-        </div>
-        <div class="col s6 loginDiv">
-            <br><br><br>
-            <hr class="hr-text" data-content="OR">
-            <br>
-            <div class="socialIcons">
-                <i class="fa fa-facebook-official">&nbsp; | Log in with Facebook</i>
-            </div>
-            <div class="socialIcons">
-                <i class="fa fa-google-plus-official">&nbsp; | Log in with Google</i>
-            </div><br><br>
-            <div class="loginPage-redirect">
-                <h4>Already have an account?</h4>
-                <a href="login">Login here</a>
-            </div>
-        </div>
+
+                <div class="card-action">
+                    <a class="btn modal-trigger" id="login" data-target="modal-login">Login</a>
+                </div>
+
+                <div id="modal-signup" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign up</h4><br />
+                        <form id="signup-form">
+                            <div class="input-field">
+                                <input type="email" id="signup-email" required />
+                                <label for="signup-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required />
+                                <label for="signup-password">Choose password</label>
+                            </div>
+                            <button class="btn z-depth-0">Sign up</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- LOGIN MODAL -->
+                <div id="modal-login" class="modal">
+                    <div class="modal-content">
+                        <h4>Login</h4><br />
+                        <form id="login-form">
+                            <div class="input-field">
+                                <input type="email" id="login-email" required />
+                                <label for="login-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required />
+                                <label for="login-password">Your password</label>
+                            </div>
+                            <button class="btn z-depth-0">Login</button>
+                        </form>
+                    </div>
+                </div>
     </div><br><br>
     <div class="divider"></div><br>
     <div class="row" id="contact">
