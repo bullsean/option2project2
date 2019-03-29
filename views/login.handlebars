@@ -6,7 +6,7 @@
         <div class="row parallax03">
             <div class="col s12 white-text">
                 <h1>Hello there ... </h1>
-				<h3>Login below to access your account</h3>
+                <h3>Login below to access your account</h3>
             </div>
         </div>
     </div>
@@ -14,23 +14,68 @@
 </div>
 <!--End bottom parallax-->
 <!--Start first section -->
+
 <div class="section white content-container" id="signup">
     <div class="row">
         <div class="col s10 card-wrap offset-s1">
             <div class="card">
+                <div class="card-action">
+                    <a class="btn modal-trigger" id="sign-up" data-target="modal-signup">Sign Up!</a>
+                </div>
+
+                <div class="card-action">
+                    <a class="btn modal-trigger" id="login" data-target="modal-login">Login</a>
+                </div>
+
+                <div id="modal-signup" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign up</h4><br />
+                        <form id="signup-form">
+                            <div class="input-field">
+                                <input type="email" id="signup-email" required />
+                                <label for="signup-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required />
+                                <label for="signup-password">Choose password</label>
+                            </div>
+                            <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- LOGIN MODAL -->
+                <div id="modal-login" class="modal">
+                    <div class="modal-content">
+                        <h4>Login</h4><br />
+                        <form id="login-form">
+                            <div class="input-field">
+                                <input type="email" id="login-email" required />
+                                <label for="login-email">Email address</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required />
+                                <label for="login-password">Your password</label>
+                            </div>
+                            <button class="btn yellow darken-2 z-depth-0">Login</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                {{!-- Original Login Page Code --}}
                 <h1>Please login here </h1>
                 <div class="divider"></div>
                 <form id="signup_form">
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
-							<i class="material-icons prefix">account_circle</i>
-							<input placeholder="" id="username" type="text" class="validate">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="" id="username" type="text" class="validate">
                             <label for="username">User Name</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s8 offset-s2">
-							<i class="material-icons prefix">lock_outline</i>
+                            <i class="material-icons prefix">lock_outline</i>
                             <input placeholder="" id="password" type="password" class="validate">
                             <label for="password">Password</label>
                         </div>

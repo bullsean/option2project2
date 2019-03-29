@@ -1,5 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //Start of Document Ready function
+
+  var modals = document.querySelectorAll('.modal');
+  M.Modal.init(modals);
+
   //Parallax initialization
   $(".parallax").parallax();
   //Collapsible initialization
@@ -7,7 +11,7 @@ $(document).ready(function() {
 
   //Navbar background to change to other color when scroll down to the page --- 
   //done to overcome the change of page body color
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     if (scroll > 550) {
       $("#header").css("background", "#f5c2aa");
@@ -17,7 +21,7 @@ $(document).ready(function() {
   });
 
   //On submiting user signup info
-  $("#signUp").on("click", function(event) {
+  $("#signUp").on("click", function (event) {
     event.preventDefault();
     //1. get user input
     var userName = $("#username")
@@ -42,7 +46,7 @@ $(document).ready(function() {
           password: password,
           email: email
         }
-      }).then(function(data) {
+      }).then(function (data) {
         window.location = "/dashboard" + "/" + data.id;
       });
     } else {
@@ -87,7 +91,7 @@ $(document).ready(function() {
   // });
   var userId = $("#data").data("id");
   //When user submit his name, these info will be sent to the server -- check api-routes file
-  $("#nameSubmit").on("click", function(event) {
+  $("#nameSubmit").on("click", function (event) {
     event.preventDefault();
     var firstName = $("#first_name")
       .val()
@@ -107,13 +111,13 @@ $(document).ready(function() {
         lastName: lastName,
         title: title
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
 
   //When user submit his experiences, these info will be sent to the server -- check api-routes file
-  $("#expSubmit").on("click", function(event) {
+  $("#expSubmit").on("click", function (event) {
     event.preventDefault();
     var comJectName = $("#company-project")
       .val()
@@ -133,13 +137,13 @@ $(document).ready(function() {
         titleRole: titleRole,
         desc: desc
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
 
   //When user submit his education, these info will be sent to the server -- check api-routes file
-  $("#eduSubmit").on("click", function(event) {
+  $("#eduSubmit").on("click", function (event) {
     event.preventDefault();
     var institution = $("#institute")
       .val()
@@ -155,14 +159,14 @@ $(document).ready(function() {
         institution: institution,
         degree: degree
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
 
   //When user submit his licenses or certificates, these info will be sent to the server --
   //check api-routes file
-  $("#licertSubmit").on("click", function(event) {
+  $("#licertSubmit").on("click", function (event) {
     event.preventDefault();
     var licertName = $("#lice-cert-name")
       .val()
@@ -174,13 +178,13 @@ $(document).ready(function() {
       data: {
         licertName: licertName
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
 
   //When user submit his skills and accomplishments, these info will be sent to the server -- check api-routes file
-  $("#skaccomSubmit").on("click", function(event) {
+  $("#skaccomSubmit").on("click", function (event) {
     event.preventDefault();
     var skaccomName = $("#skill-accom-name")
       .val()
@@ -192,13 +196,13 @@ $(document).ready(function() {
       data: {
         skaccomName: skaccomName
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
 
   //When user submit his coonections, these info will be sent to the server -- check api-routes file
-  $("#connectSubmit").on("click", function(event) {
+  $("#connectSubmit").on("click", function (event) {
     event.preventDefault();
     var facebook = $("#facebook")
       .val()
@@ -222,7 +226,7 @@ $(document).ready(function() {
         github: github,
         instagram: instagram
       }
-    }).then(function() {
+    }).then(function () {
       location.reload();
     });
   });
@@ -233,7 +237,7 @@ $(document).ready(function() {
   // });
 
   //On readyToGo load the selected template
-  $("#readyToGo").on("click", function(event) {
+  $("#readyToGo").on("click", function (event) {
     // event.preventDefault();
 
     // // $.ajax({
