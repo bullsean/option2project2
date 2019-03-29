@@ -1,8 +1,8 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
     res.render("index", {
       title: "Home | Portfolio Creator"
     });
@@ -30,7 +30,7 @@ module.exports = function (app) {
   });
 
   //When user click on login at the navbar he will be directed to the login page
-  app.get("/login", function (req, res) {
+  app.get("/login", function(req, res) {
     res.render("login", {
       title: "Log In | Portfolio Creator"
     });
@@ -111,7 +111,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/profileName/:UserId", function (req, res) {
+  app.get("/api/profileName/:UserId", function(req, res) {
     db.User.findOne({ where: { id: req.params.UserId } }).then(function (results) {
       var fullName = results.profileFirstName + " " + results.profileLastName;
       res.render("dark", {

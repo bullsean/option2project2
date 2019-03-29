@@ -24,15 +24,13 @@ $(document).ready(function () {
   $("#signUp").on("click", function(event) {
     event.preventDefault();
     //1. get user input
-    var userName = $("#username")
-      .val()
-      .trim();
     var password = $("#password")
       .val()
       .trim();
     var email = $("#email")
       .val()
       .trim();
+    var uid = $("data").data("uid")
     //validate user input
     if (signupValidation(userName, password, email)) {
       //if user input is valid .. send data to the (authintication methods - post action below --
@@ -42,9 +40,10 @@ $(document).ready(function () {
         url: "/api/dashboard",
         method: "POST",
         data: {
-          userName: userName,
+          email: email,
           password: password,
-          email: email
+          uid: uid
+          // id: 
         }
       }).then(function(data) {
         window.location = "/dashboard" + "/" + data.id;
@@ -89,7 +88,7 @@ $(document).ready(function () {
   //   //   window.location = "/";
   //   // });
   // });
-  var userId = $("#data").data("id");
+  var userId = $("#data").data("uid");
   //When user submit his name, these info will be sent to the server -- check api-routes file
   $("#nameSubmit").on("click", function (event) {
     event.preventDefault();
