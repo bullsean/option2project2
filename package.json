@@ -19,7 +19,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
     "mysql2": "^1.6.5",
-    "sequelize": "^4.43.0",
+    "sequelize": ">=4.44.3",
     "uninstall": "0.0.0"
   },
   "devDependencies": {
